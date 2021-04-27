@@ -1,0 +1,45 @@
+---
+- hosts: all
+  become: yes
+  remote_user: opc
+  tasks:
+  - name: Ensure iotop package is installed
+    package:
+      name: iotop
+      state: present
+
+  - name: Ensure tmux package is installed
+    package:
+      name: tmux
+      state: present
+
+  - name: Ensure wget package is installed
+    package:
+      name: wget
+      state: present
+
+  - name: Ensure curl package is installed
+    package:
+      name: curl
+      state: present
+
+  - name: Ensure EPEL package repo package is installed
+    package:
+      name: oracle-epel-release-el7
+      state: present
+
+  - name: Add EPEL repository
+    yum_repository:
+      name: epel
+      description: EPEL YUM repo
+      baseurl: http://yum.oracle.com/repo/OracleLinux/OL7/developer_EPEL/$basearch/
+
+  - name: Ensure rlwrap package is installed
+    package:
+      name: rlwrap
+      state: present
+
+  - name: Ensure htop package is installed
+    package:
+      name: htop
+      state: present
