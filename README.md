@@ -2,8 +2,6 @@
 
 Some tools to use on linux for Oracle DBAs.
 
-man: https://linux.die.net/man/8/ntpd
-
 ## What tools will be installed?
 
 ```python
